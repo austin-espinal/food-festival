@@ -13,10 +13,15 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js'
     },
+    devServer: {
+        static: {
+            directory: __dirname
+        }
+    },
     module: {
         rules: [
             {
-                test: /\.jpg$/i,
+                test: /\.(png|jpe?g|gif)$/i,
                 use: [
                     {
                         loader: "file-loader",
